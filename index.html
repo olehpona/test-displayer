@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Data Display</title>
+    <meta property="tg:site_verification" content="g7j8/rPFXfhyrq5q0QQV7EsYWv4=">
+</head>
+<body>
+    <main id="display">
+
+    </main>
+    <script>
+        const url = new URL(window.location.href);
+        const data = url.searchParams.get("data")
+        const decodedHtml = atob(data)
+        document.getElementById("display").innerHTML = decodedHtml;
+    </script>
+</body>
+</html>
