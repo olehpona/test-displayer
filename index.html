@@ -1,19 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Data Display</title>
+    <title>Tg-captain display</title>
+    <meta property="og:site_name" content="Tg-captain">
+    <meta property="og:description" content="Data display">
+    <meta property="article:author" content="tg-captain">
+    <meta property="telegram:channel" content="@cor_bee">
     <meta property="tg:site_verification" content="g7j8/rPFXfhyrq5q0QQV7EsYWv4=">
+    <meta property="article:published_time" content="2020-02-03T23:10:04.654Z">
 </head>
-<body>
-    <main id="display">
 
-    </main>
-    <script>
-        const url = new URL(window.location.href);
+<body>
+<div class="article">
+    <article class="article__content">
+
+    </article>
+</div>
+<script>
+    const url = new URL(window.location.href);
+    if (url.searchParams.has("data")){
         const data = url.searchParams.get("data")
         const decodedHtml = atob(decodeURI(data))
-        document.getElementById("display").innerHTML = decodedHtml;
-    </script>
+        document.querySelector(".article__content").innerHTML = decodedHtml;
+    } else {
+        document.querySelector(".article__content").innerText = "This page used to display data from tg-captain"
+    }
+
+</script>
 </body>
+
 </html>
