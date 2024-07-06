@@ -12,7 +12,7 @@
     <script>
         const url = new URL(window.location.href);
         const data = url.searchParams.get("data")
-        const decodedHtml = atob(data)
+        const decodedHtml = atob(decodeURI(data))
         document.getElementById("display").innerHTML = decodedHtml;
     </script>
 </body>
